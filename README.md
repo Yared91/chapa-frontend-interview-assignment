@@ -1,1 +1,0 @@
-# chapa-frontend-interview-assignment

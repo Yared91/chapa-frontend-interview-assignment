@@ -8,8 +8,8 @@ export const fetchTransactions = () =>
     setTimeout(
       () =>
         resolve([
-          { id: 1, amount: -300, date: "2025-07-01" },
-          { id: 2, amount: +600, date: "2025-07-02" },
+          { id: 1, amount: -500, date: "2025-07-01" },
+          { id: 2, amount: +800, date: "2025-07-02" },
         ]),
       1000
     )
@@ -33,7 +33,7 @@ export const fetchSystemStats = () =>
       () =>
         resolve({
           totalPayments: 10000,
-          activeUsers: 5,
+          activeUsers: 1,
         }),
       1000
     )

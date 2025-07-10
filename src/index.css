@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: bisque;
+  background-image: url('background-image (2).png');
   color: #333;
   line-height: 1.6;
   padding: 2rem;
@@ -137,5 +138,20 @@ form button {
   form input {
     width: 100%;
   }
+  .btn-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #2980b9;
+}
 }
 

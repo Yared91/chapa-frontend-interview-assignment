@@ -1,21 +1,39 @@
-import { createContext, useContext, useState } from "react"; /* setting up a global context to manage authentication state */
+import React, { createContext, useContext, useState } from "react";
 
-const AuthContext = createContext(); /* creates a context to share user data across components */
+// 1. Create context
+const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+// 2. Custom hook to encapsulate logic
+function useProvideAuth() {
   const [user, setUser] = useState(null);
 
   const login = (role) => {
     setUser({ name: "Mock User", role });
   };
 
-  const logout = () => setUser(null);
+  const logout = () => {
+    setUser(null);
+  };
+
+  return {
+    user,
+    login,
+    logout,
+  };
+}
+
+// 3. Context provider
+export const AuthProvider = ({ children }) => {
+  const auth = useProvideAuth();
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={auth}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext); /* custom hook so components can easily use the context */
+// 4. Hook to consume context
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
